@@ -79,14 +79,14 @@ WSGI_APPLICATION = 'MyBlog.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
 import dj_database_url
+
 
 if os.getenv("USE_POSTGRES") == "true":
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.postgresql",
-            "NAME": os.getenv("POSTGRES_DB", "blogproject3-db"),
+            "NAME": os.getenv("POSTGRES_DB", "app-db"),
             "USER": os.getenv("POSTGRES_USER", "root"),
             "PASSWORD": os.getenv("POSTGRES_PASSWORD", "your_password"),
             "HOST": os.getenv("POSTGRES_HOST", "localhost"),
