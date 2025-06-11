@@ -1,0 +1,63 @@
+{% extends "base_shop.html" %}
+{% load static %}
+{% load humanize %} 
+
+{% block title %}
+    دوره ها
+{% endblock title %}
+
+
+{% block header_refrences %}
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{% static "shop/css/styles.css" %}" rel="stylesheet" />
+    <link href="{% static "shop/css/style404.css" %}" rel="stylesheet" />
+{% endblock header_refrences %}
+
+{% block header_section_shop  %}
+    <!-- Navigation-->
+    {% include "shop/includes/navbar.html" %}
+
+    {% if messages %}
+      {% for message in messages %}
+      <div class="alert alert-warning alert-dismissible fade show text-end" role="alert">
+        {{message}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      
+      {% endfor %}
+    
+    {% endif %}
+    <!-- Header-->
+    {% include "shop/includes/header.html" %}
+{% endblock header_section_shop %}
+
+{% block content_section_shop %}
+<br>
+<div id="colorlib-notfound">
+    <div class="colorlib-notfound">
+        <div class="colorlib-notfound-404">
+            <h1>4<span>0</span>4</h1>
+        </div>
+        <form class="colorlib-notfound-search" action="#" role="search"
+              method="post">
+            <input type="search" name="s" placeholder="دوره ای را جستجو کن">
+            <button type="submit"><span></span></button>
+        </form>
+    </div>
+    {% comment %} <p class="colorlib-copyright"><span><?php _e( '404 Page Template designed by','colorlib-404-customizer' ); ?></span> <a href="https://colorlib.com/" target="_blank">Colorlib.</a></p> {% endcomment %}
+</div>
+<br>
+
+{% endblock content_section_shop %}
+
+
+
+
+{% block footer_section_shop %}
+    <!-- Footer-->
+    {% include "shop/includes/footer.html" %}
+{% endblock  %}

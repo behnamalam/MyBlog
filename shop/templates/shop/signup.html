@@ -1,0 +1,47 @@
+{% extends "base_shop.html" %}
+{% load static %}
+
+{% block title %}
+    ثبت نام
+{% endblock title %}
+
+{% block header_refrences %}
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{% static "shop/css/styles.css" %}" rel="stylesheet" />
+{% endblock header_refrences %}
+
+{% block header_section_shop  %}
+    <!-- Navigation-->
+    {% include "shop/includes/navbar.html" %}
+    <!-- Header-->
+    {% include "shop/includes/header.html" %}
+{% endblock header_section_shop %}
+
+
+{% block content_section_shop %}
+<div class="container m-5">
+  <form method="post" dir="rtl" action="">
+        {% csrf_token %}
+        <div class="row justify-content-center">
+            <div class="col-7">
+                {{form.as_p}}
+                <div class="form-btn mt-3">
+                  <button type="submit" class="btn btn-primary">ثبت نام</button>
+                </div>
+            </div>
+        </div>
+
+ 
+    
+</form>
+</div>
+
+{% endblock content_section_shop %}
+
+{% block footer_section_shop %}
+{% include "shop/includes/footer.html" %}
+{% endblock footer_section_shop %}

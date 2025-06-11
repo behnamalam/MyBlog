@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+{% block header_refrences %}
+    <link rel="stylesheet" href="{% static "Blog/index.css" %}">
+{% endblock  %}
+{% block title %}
+    My Blog
+{% endblock  %}
+
+{% block content %}
+    <section id="welcome">
+        <header>
+            <img src="{% static 'Blog/images/logo.jpg' %}" alt="">
+            <h2>MFT BLOG Project</h2>
+        </header>
+        <p>My Name is Behnam and Im teaching Python for everyBody</p>
+    </section>
+    <section id="latest-project">
+        <h2>Latest Projects</h2>
+        <ul>
+            {% include "Blog/includes/article.html" %}
+            {% include "Blog/includes/article.html" %}
+            {% include "Blog/includes/article.html" %}
+        </ul>
+    </section>
+
+{% endblock  %}
