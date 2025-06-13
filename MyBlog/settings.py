@@ -82,14 +82,17 @@ WSGI_APPLICATION = 'MyBlog.wsgi.application'
 import dj_database_url
 
 
+
+import os
+
 if os.getenv("USE_POSTGRES") == "true":
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.postgresql",
-            "NAME": os.getenv("POSTGRES_DB", "app-db"),
+            "NAME": os.getenv("POSTGRES_DB", "blogproject3-db"),
             "USER": os.getenv("POSTGRES_USER", "root"),
-            "PASSWORD": os.getenv("POSTGRES_PASSWORD", "your_password"),
-            "HOST": os.getenv("POSTGRES_HOST", "localhost"),
+            "PASSWORD": os.getenv("POSTGRES_PASSWORD", "JeZs6fDlvqGmNN0eaKTTxxQz"),
+            "HOST": os.getenv("POSTGRES_HOST", "blogproject3-db"),
             "PORT": os.getenv("POSTGRES_PORT", "5432"),
         }
     }
